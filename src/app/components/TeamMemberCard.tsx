@@ -20,6 +20,9 @@ export function TeamMemberCard(user: User) {
                   {alias}
                 </li>
               ))}
+              <li className="text-sm text-muted-foreground">
+                {user.personality}
+              </li>
             </ul>
             <ul className="space-y-2">
               {user.facts.map((fact) => (
