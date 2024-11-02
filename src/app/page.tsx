@@ -12,9 +12,9 @@ export default function Home() {
   useEffect(() => {
     if (status === "loading") {return}
     if (status === "unauthenticated") {
-      router.push("/login")
+      router.push("/codices")
     } else if (status === "authenticated") {
-      router.push("/dashboard")
+      router.push("/codices")
     }
   }, [status, router])
 
