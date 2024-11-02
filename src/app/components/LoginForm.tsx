@@ -15,7 +15,7 @@ import {
 import { signIn } from "next-auth/react";
 
 export default function LoginForm() {
-  const [email, setEmail] = useState("");
+  const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [error, setError] = useState("");
@@ -30,11 +30,11 @@ export default function LoginForm() {
       console.log("Attempting to sign in");
       const res = await signIn("credentials", {
         redirect: false,
-        email,
+        username,
         password,
       });
 
-      console.log("data sent: ", email.slice(0, 5) + "...", password.length.toString())
+      console.log("data sent: ", username.slice(0, 5) + "...", password.length.toString())
   
       if (!res) {
         throw new Error("Sign-in request failed");
@@ -46,7 +46,7 @@ export default function LoginForm() {
         // The error message from the server will be in res.error
         setError(res.error);
       } else if (res.ok) {
-        router.push("/dashboard");
+        router.push("/codices");
       } else {
         setError("An unexpected error occurred");
       }
@@ -67,13 +67,13 @@ export default function LoginForm() {
       <CardContent>
         <form onSubmit={handleSubmit} className="space-y-4">
           <div className="space-y-2">
-            <Label htmlFor="email">Email</Label>
+            <Label htmlFor="username">Username</Label>
             <Input
-              id="email"
-              type="email"
-              placeholder="Enter your email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
+              id="username"
+              type="text"
+              placeholder="Enter your username"
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
               required
             />
           </div>
@@ -95,10 +95,15 @@ export default function LoginForm() {
             {isSubmitting ? "Logging in..." : "Log In"}
           </Button>
           <div className="mt-4 text-center">
+            <a href="/codices" className="text-blue-500 hover:underline">
+              Want to just watch? Pffft, okay, cuck.
+            </a>
+          </div>
+          {/* <div className="mt-4 text-center">
             <a href="/signup" className="text-blue-500 hover:underline">
               Don&apos;t have an account? Sign Up
             </a>
-          </div>
+          </div> */}
         </form>
       </CardContent>
     </Card>

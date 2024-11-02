@@ -10,20 +10,20 @@ import GenericAccordion from './GenericAccordion'
 
 const faqItems = [
   {
-    trigger: "How do I reset my password?",
-    content: "To reset your password, click on the 'Forgot Password' link on the login page. Follow the instructions sent to your email to create a new password.",
+    trigger: "How do I end this?",
+    content: "Parasta terveyspalvelua, lähellä sinua. KYS",
   },
   {
-    trigger: "How can I update my profile information?",
-    content: "Log in to your account and navigate to the Profile Settings page. There you can update your personal details, profile picture, and privacy preferences.",
+    trigger: "How do I end this?",
+    content: "Parasta terveyspalvelua, lähellä sinua. KYS",
   },
   {
-    trigger: "What should I do if I can't log in?",
-    content: "If you're having trouble logging in, first ensure you're using the correct email and password. If you still can't log in, try resetting your password. If issues persist, please contact our support team.",
+    trigger: "How do I end this?",
+    content: "Parasta terveyspalvelua, lähellä sinua. KYS",
   },
   {
-    trigger: "How do I cancel my subscription?",
-    content: "To cancel your subscription, go to your Account Settings and select the 'Subscription' tab. Click on 'Cancel Subscription' and follow the prompts. Please note that you'll continue to have access until the end of your current billing period.",
+    trigger: "How do I end this?",
+    content: "Parasta terveyspalvelua, lähellä sinua. KYS",
   },
 ]
 
@@ -70,7 +70,7 @@ export default function HelpAndSupport() {
               <Label htmlFor="message">Message</Label>
               <Textarea id="message" placeholder="Describe your issue or question" className="h-32" />
             </div>
-            <Button type="submit" className="w-full">Submit</Button>
+            <Button type="submit" className="w-full" disabled={true}>Submit</Button>
           </form>
         </div>
       </div>

@@ -13,8 +13,8 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <link rel="icon" href="/images/Logo-04.svg" type="image/png" />
-      <title>Fount.one</title>
+      <link rel="icon" href="/images/LimbusCompanyLogo.png" type="image/png" />
+      <title>Arcane Codices</title>
       <body className={inter.className}>
         <SessionProvider>{children}</SessionProvider>
       </body>

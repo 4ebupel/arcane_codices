@@ -5,13 +5,10 @@ import NextAuth from "next-auth";
 declare module "next-auth" {
   interface User {
     id: string;
-    email: string;
+    name: string;
     accessToken: string;
-    refreshToken: string;
     accessTokenExpires: number;
-    isVerified: boolean;
-    profilePictureUrl: string;
-    firstName: string;
+    role: string;
   }
 
   interface Session {
@@ -22,13 +19,9 @@ declare module "next-auth" {
 declare module "next-auth/jwt" {
   interface JWT {
     id: string;
-    email: string;
+    name: string;
     accessToken: string;
-    refreshToken: string;
     accessTokenExpires: number;
-    error: string;
-    isVerified: boolean;
-    profile_picture_url: string;
-    first_name: string;
+    role: string;
   }
 }
