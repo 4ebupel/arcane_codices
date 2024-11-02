@@ -15,7 +15,7 @@ import { useRouter } from "next/navigation"
 export default function LogoMenu() {
   const router = useRouter()
   const { data: session } = useSession();
-  const profile_picture_url = session?.user?.profilePictureUrl;
+  const profile_picture_url = "/images/LimbusCompanyLogo.png";
   console.log(profile_picture_url, session);
 
   const handleLogout = async () => {
